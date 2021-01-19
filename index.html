@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <title>IKT 205 resources and tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+</head>
+
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-set-preferred-mode-onload="true">
+    <div class="page-wrapper">
+        <div class="sticky-alerts"></div>
+        <div class="content-wrapper">
+            <div class="card">
+                <h2 class="card-title">
+                    Repository name:
+                </h2>
+                <p>
+                    Du skal lage deg et repository under orginisasjonen vår (UiA-IKT-205). Det er viktig at dette repository får riktig navn.
+                    Riktig navn kan du generer her ved å kopiere det fulle navnet du er registrert med på <a href="https://uia.instructure.com/courses/8454/users" target="_blank">fagets canvas side</a>
+                    Bruker du ikke riktig navn som beskrevet er det ikke gitt at oppgavene dine blir registrert som fullført.
+                </p>
+                <div>
+                    <input type="text" id="canvasName" class="form-control" placholder="Dit fulle navn som vist på canvas">
+                    <div class="code" id="repoName"></div>
+                </div>
+                <div class="text-right mt-10">
+                    <a href="#" class="btn btn-sm" onclick="generateRepoName()">Generer</a>
+                </div>
+                <script>
+                    function generateRepoName() {
+                        const fullName = document.getElementById("canvasName").value;
+                        const repoName = _.camelCase(_.deburr(fullName));
+                        document.getElementById("repoName").innerHTML = `Dit repo navn: <span class="text-success">${repoName}</span>`;
+                    }
+                </script>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+</body>
+
+</html>
